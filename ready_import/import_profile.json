@@ -1,0 +1,290 @@
+{
+  "format": "excelprep-import",
+  "version": 1,
+  "files": [
+    "prepared_order_items_001.xlsx",
+    "prepared_categories_002.xlsx",
+    "prepared_manufacturers_003.xlsx",
+    "prepared_products_004.xlsx",
+    "prepared_roles_005.xlsx",
+    "prepared_sizes_006.xlsx",
+    "prepared_stock_items_007.xlsx",
+    "prepared_subcategories_008.xlsx",
+    "prepared_users_009.xlsx",
+    "prepared_orders_010.xlsx"
+  ],
+  "table_rules": {
+    "prepared_order_items_001": {
+      "table": "order_items",
+      "primary_key": [
+        "order_item_id"
+      ],
+      "types": {
+        "order_item_id": "BIGINT",
+        "client_name": "TEXT",
+        "category": "TEXT",
+        "product_name": "TEXT",
+        "manufacturer": "TEXT",
+        "size": "BIGINT",
+        "quantity": "BIGINT",
+        "unit_price": "BIGINT",
+        "product_id": "BIGINT",
+        "category_id": "BIGINT",
+        "manufacturer_id": "BIGINT",
+        "order_id": "BIGINT",
+        "size_id": "BIGINT"
+      }
+    },
+    "prepared_categories_002": {
+      "table": "categories",
+      "primary_key": [
+        "category_id"
+      ],
+      "types": {
+        "prepared_categories_007_id": "BIGINT",
+        "category_id": "BIGINT",
+        "category": "TEXT"
+      }
+    },
+    "prepared_manufacturers_003": {
+      "table": "manufacturers",
+      "primary_key": [
+        "manufacturer_id"
+      ],
+      "types": {
+        "prepared_manufacturers_008_id": "BIGINT",
+        "manufacturer_id": "BIGINT",
+        "manufacturer": "TEXT"
+      }
+    },
+    "prepared_products_004": {
+      "table": "products",
+      "primary_key": [
+        "product_id"
+      ],
+      "types": {
+        "prepared_products_002_id": "BIGINT",
+        "product_id": "BIGINT",
+        "image_file": "TEXT",
+        "product_name": "TEXT",
+        "description": "TEXT",
+        "composition": "TEXT",
+        "price": "BIGINT",
+        "subcategory_id": "BIGINT",
+        "category_id": "BIGINT",
+        "manufacturer_id": "BIGINT"
+      }
+    },
+    "prepared_roles_005": {
+      "table": "roles",
+      "primary_key": [
+        "role_id"
+      ],
+      "types": {
+        "prepared_roles_009_id": "BIGINT",
+        "role_id": "BIGINT",
+        "role_name": "TEXT"
+      }
+    },
+    "prepared_sizes_006": {
+      "table": "sizes",
+      "primary_key": [
+        "size_id"
+      ],
+      "types": {
+        "prepared_sizes_003_id": "BIGINT",
+        "size_id": "BIGINT",
+        "size": "TEXT"
+      }
+    },
+    "prepared_stock_items_007": {
+      "table": "stock_items",
+      "primary_key": [
+        "stock_item_id"
+      ],
+      "types": {
+        "prepared_stock_items_0041_id": "BIGINT",
+        "stock_item_id": "BIGINT",
+        "product_name": "TEXT",
+        "manufacturer": "TEXT",
+        "size": "TEXT",
+        "quantity_available": "BIGINT",
+        "manufacturer_id": "BIGINT",
+        "product_id": "BIGINT",
+        "size_id": "BIGINT"
+      }
+    },
+    "prepared_subcategories_008": {
+      "table": "subcategories",
+      "primary_key": [
+        "subcategory_id"
+      ],
+      "types": {
+        "prepared_subcategories_006_id": "BIGINT",
+        "subcategory_id": "BIGINT",
+        "subcategory": "TEXT"
+      }
+    },
+    "prepared_users_009": {
+      "table": "users",
+      "primary_key": [
+        "user_id"
+      ],
+      "types": {
+        "prepared_users_005_id": "BIGINT",
+        "user_id": "BIGINT",
+        "last_name": "TEXT",
+        "first_name": "TEXT",
+        "middle_name": "TEXT",
+        "login": "TEXT",
+        "role_id": "BIGINT"
+      }
+    },
+    "prepared_orders_010": {
+      "table": "orders",
+      "primary_key": [
+        "order_id"
+      ],
+      "types": {
+        "order_id": "BIGINT",
+        "order_number": "BIGINT",
+        "order_date": "TIMESTAMP",
+        "user_id": "BIGINT"
+      }
+    }
+  },
+  "foreign_keys": [
+    {
+      "table": "order_items",
+      "columns": [
+        "product_id"
+      ],
+      "references": "products",
+      "reference_columns": [
+        "product_id"
+      ]
+    },
+    {
+      "table": "order_items",
+      "columns": [
+        "category_id"
+      ],
+      "references": "categories",
+      "reference_columns": [
+        "category_id"
+      ]
+    },
+    {
+      "table": "order_items",
+      "columns": [
+        "manufacturer_id"
+      ],
+      "references": "manufacturers",
+      "reference_columns": [
+        "manufacturer_id"
+      ]
+    },
+    {
+      "table": "order_items",
+      "columns": [
+        "order_id"
+      ],
+      "references": "orders",
+      "reference_columns": [
+        "order_id"
+      ]
+    },
+    {
+      "table": "order_items",
+      "columns": [
+        "size_id"
+      ],
+      "references": "sizes",
+      "reference_columns": [
+        "size_id"
+      ]
+    },
+    {
+      "table": "products",
+      "columns": [
+        "subcategory_id"
+      ],
+      "references": "subcategories",
+      "reference_columns": [
+        "subcategory_id"
+      ]
+    },
+    {
+      "table": "products",
+      "columns": [
+        "category_id"
+      ],
+      "references": "categories",
+      "reference_columns": [
+        "category_id"
+      ]
+    },
+    {
+      "table": "products",
+      "columns": [
+        "manufacturer_id"
+      ],
+      "references": "manufacturers",
+      "reference_columns": [
+        "manufacturer_id"
+      ]
+    },
+    {
+      "table": "stock_items",
+      "columns": [
+        "manufacturer_id"
+      ],
+      "references": "manufacturers",
+      "reference_columns": [
+        "manufacturer_id"
+      ]
+    },
+    {
+      "table": "stock_items",
+      "columns": [
+        "product_id"
+      ],
+      "references": "products",
+      "reference_columns": [
+        "product_id"
+      ]
+    },
+    {
+      "table": "stock_items",
+      "columns": [
+        "size_id"
+      ],
+      "references": "sizes",
+      "reference_columns": [
+        "size_id"
+      ]
+    },
+    {
+      "table": "users",
+      "columns": [
+        "role_id"
+      ],
+      "references": "roles",
+      "reference_columns": [
+        "role_id"
+      ]
+    },
+    {
+      "table": "orders",
+      "columns": [
+        "user_id"
+      ],
+      "references": "users",
+      "reference_columns": [
+        "user_id"
+      ]
+    }
+  ],
+  "auto_foreign_keys": false,
+  "reference_rules": []
+}
