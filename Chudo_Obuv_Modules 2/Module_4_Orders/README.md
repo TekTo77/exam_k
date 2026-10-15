@@ -87,10 +87,28 @@ STOCK_MODE = "none"
 Справочник производителя можно вывести так:
 
 ```python
-DATABASE_LOOKUPS = {"products": {"manufacturer": {
-    "column": "manufacturer_id", "table": "manufacturers",
-    "key": "manufacturer_id", "value": "manufacturer_name",
-}}}
+DATABASE_LOOKUPS = DATABASE_LOOKUPS = {
+    "products": {
+        "manufacturer": {
+            "column": "manufacturer_id",
+            "table": "manufacturers",
+            "key": "manufacturer_id",
+            "value": "manufacturer",
+        },
+        "category": {
+            "column": "category_id",
+            "table": "categories",
+            "key": "category_id",
+            "value": "category",
+        },
+        "subcategory": {
+            "column": "subcategory_id",
+            "table": "subcategories",
+            "key": "subcategory_id",
+            "value": "subcategory",
+        },
+    },
+}
 ```
 
 С учётом реальных внешних ключей некоторые справочники определяются сами.
