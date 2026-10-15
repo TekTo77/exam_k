@@ -1,0 +1,33 @@
+{
+  "images_folder": "images",
+  "mappings": {
+    "0d5fb34cc67ba55dbe0d": {
+      "products": {
+        "table": "products",
+        "columns": {
+          "product_id": "product_id",
+          "product_name": "product_name",
+          "price": "price",
+          "category": null,
+          "subcategory": null,
+          "manufacturer": null,
+          "description": null,
+          "composition": null,
+          "image_path": null
+        }
+      },
+      "users": {
+        "table": "customers",
+        "columns": {
+          "user_id": "customer_id",
+          "login": "first_name",
+          "last_name": "last_name",
+          "first_name": "first_name",
+          "middle_name": "last_name",
+          "role_name": "last_name",
+          "role_id": "last_name"
+        }
+      }
+    }
+  }
+}

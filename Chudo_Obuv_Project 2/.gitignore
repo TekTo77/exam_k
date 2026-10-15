@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+database/postgres_connection.json
+.venv/

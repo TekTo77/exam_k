@@ -1,0 +1,9 @@
+{
+  "host": "localhost",
+  "port": "5432",
+  "database": "excel_data",
+  "user": "postgres",
+  "password": "postgres",
+  "schema": "public",
+  "active_tables": null
+}
